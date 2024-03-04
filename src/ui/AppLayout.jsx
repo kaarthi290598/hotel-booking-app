@@ -3,11 +3,12 @@ import Row from "./Row";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import styled from "styled-components";
+import { useState } from "react";
 
 const StyledApp = styled.div`
   display: grid;
 
-  grid-template-columns: 26rem 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   height: 100dvh;
 `;
@@ -32,10 +33,12 @@ const Container = styled.div`
 `;
 
 function AppLayout() {
+  const [isSidebar, SetisSideBar] = useState(false);
+
   return (
     <StyledApp>
-      <Header />
-      <Sidebar />
+      <Header handleSideBar={SetisSideBar} />
+      <Sidebar isOpen={isSidebar} />
       <Main>
         <Container>
           <Outlet />

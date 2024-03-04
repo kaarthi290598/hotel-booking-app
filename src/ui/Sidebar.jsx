@@ -11,11 +11,14 @@ const StyledSideBar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  width: 260px;
+  margin-left: ${(prop) => (prop.isOpen ? "-260px" : "")};
+  transition: all 200ms;
 `;
 
-function Sidebar() {
+function Sidebar({ isOpen }) {
   return (
-    <StyledSideBar>
+    <StyledSideBar isOpen={isOpen}>
       <Logo />
       <MainNav />
       {/* <Uploader /> */}

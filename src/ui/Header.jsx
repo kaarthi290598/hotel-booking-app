@@ -3,6 +3,8 @@ import Logout from "../features/authentication/Logout";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
 import DarkModeToggle from "./DarkModeToggle";
+import ButtonIcon from "./ButtonIcon";
+import { HiOutlineBars3 } from "react-icons/hi2";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -14,9 +16,12 @@ const StyledHeader = styled.header`
   align-items: center;
 `;
 
-function Header() {
+function Header({ handleSideBar }) {
   return (
     <StyledHeader>
+      <ButtonIcon marginR="auto" onClick={() => handleSideBar((open) => !open)}>
+        <HiOutlineBars3 />
+      </ButtonIcon>
       <UserAvatar />
       <HeaderMenu />
       <DarkModeToggle />
