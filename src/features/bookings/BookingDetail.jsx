@@ -32,7 +32,6 @@ function BookingDetail() {
 
   const navigate = useNavigate();
 
-  console.log(booking);
   //const status = booking.status;
 
   const moveBack = useMoveBack();

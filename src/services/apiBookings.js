@@ -122,3 +122,19 @@ export async function deleteBooking(id) {
   }
   return data;
 }
+
+export async function createNewBooking({ bookingData, guestsData }) {
+  const { data: guests, error: guestsError } = await supabase
+    .from("guests")
+    .insert(guestsData)
+    .select()
+    .single();
+
+  const guestId = guests.id;
+  const { data: bookings, error: bookingError } = await supabase
+    .from("bookings")
+    .insert([{ ...bookingData, guestId: guestId }])
+    .select();
+
+  return bookings;
+}

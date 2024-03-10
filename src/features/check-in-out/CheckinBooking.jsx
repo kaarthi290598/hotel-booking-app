@@ -44,6 +44,7 @@ function CheckinBooking() {
     id: bookingId,
     guests,
     totalPrice,
+    cabinPrice,
     numGuests,
     hasBreakfast,
     numNights,
@@ -102,7 +103,9 @@ function CheckinBooking() {
           I confirm that this booking was paid for by the {guests.fullName}.
           Amount {formatCurrency(totalPrice)}{" "}
           {breakFast
-            ? `+ breakfast ${formatCurrency(Optional_breakfast_price)}`
+            ? `( Cabin ${formatCurrency(
+                cabinPrice
+              )} + breakfast ${formatCurrency(Optional_breakfast_price)})`
             : ""}
           .
         </Checkbox>

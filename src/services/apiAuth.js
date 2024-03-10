@@ -13,6 +13,10 @@ export async function signUp({ email, password, fullName }) {
   });
   if (error) throw new Error(error.message);
 
+  //new code
+
+  console.log(data);
+
   return data;
 }
 
@@ -32,7 +36,6 @@ export async function getCurrentUser() {
   if (!sesssion.session) return null;
 
   const { data, error } = await supabase.auth.getUser();
-  console.log(data);
 
   if (error) throw new Error(error.message);
 

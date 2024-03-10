@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
 function Header({ handleSideBar }) {
   return (
     <StyledHeader>
-      <ButtonIcon marginR="auto" onClick={() => handleSideBar((open) => !open)}>
+      <ButtonIcon $marginR="auto" onClick={() => handleSideBar((open) => !open)}>
         <HiOutlineBars3 />
       </ButtonIcon>
       <UserAvatar />

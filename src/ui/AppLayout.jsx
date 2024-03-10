@@ -38,7 +38,7 @@ function AppLayout() {
   return (
     <StyledApp>
       <Header handleSideBar={SetisSideBar} />
-      <Sidebar isOpen={isSidebar} />
+      <Sidebar $isOpen={isSidebar} />
       <Main>
         <Container>
           <Outlet />
