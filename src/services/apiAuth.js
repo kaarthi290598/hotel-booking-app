@@ -1,3 +1,4 @@
+import { getSettings } from "./apiSettings";
 import supabase, { supabaseUrl } from "./supabase";
 
 export async function signUp({ email, password, fullName }) {
@@ -23,6 +24,8 @@ export async function login({ email, password }) {
     email: email,
     password: password,
   });
+
+  getSettings();
 
   if (error) throw new Error(error.message);
 
