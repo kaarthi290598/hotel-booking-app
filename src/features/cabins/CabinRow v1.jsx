@@ -53,8 +53,6 @@ function CabinRow({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
 
-  console.log(cabin);
-
   const [showForm, setShowForm] = useState(false);
 
   const { isDeleting, deleteCabin } = useDeleteCabin();

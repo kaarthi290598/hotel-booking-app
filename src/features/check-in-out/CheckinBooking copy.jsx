@@ -34,8 +34,6 @@ function CheckinBooking() {
 
   const { breakfast_price } = settingsData;
 
-  console.log(breakfast_price);
-
   useEffect(() => setConfirmPaid(booking?.isPaid ?? false), [booking]);
 
   const moveBack = useMoveBack();

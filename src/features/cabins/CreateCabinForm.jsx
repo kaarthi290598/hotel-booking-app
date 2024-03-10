@@ -32,7 +32,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         { newCabinData: { ...data, image }, id: editID },
         {
           onSuccess: (data) => {
-            console.log(data);
             reset();
             onCloseModal?.();
           },
@@ -43,19 +42,16 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         { ...data, image: image },
         {
           onSuccess: (data) => {
-            console.log(data);
             reset();
             onCloseModal?.();
           },
         }
       );
   }
-  function onError(err) {
-    console.log(err);
-  }
+
   return (
     <Form
-      onSubmit={handleSubmit(onSubmit, onError)}
+      onSubmit={handleSubmit(onSubmit)}
       type={onCloseModal ? "modal" : "regular"}
     >
       <FormRow label="Cabin Name" error={errors?.name?.message}>

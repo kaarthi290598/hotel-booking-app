@@ -46,8 +46,6 @@ const bookingDatatest = {
   status: "unconfirmed",
 };
 
-console.log(bookingDatatest);
-
 function BookingForm() {
   const navigate = useNavigate();
   const { register, handleSubmit, reset, getValues, formState } = useForm();
@@ -117,12 +115,8 @@ function BookingForm() {
     );
   }
 
-  function onError(err) {
-    console.log(err);
-  }
-
   return (
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       {/*------------------------ Guests -------------------- */}
       <FormRow label="Full Name" error={errors?.fullName?.message}>
         <Input

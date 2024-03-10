@@ -15,8 +15,6 @@ export async function signUp({ email, password, fullName }) {
 
   //new code
 
-  console.log(data);
-
   return data;
 }
 

@@ -4,7 +4,6 @@ export async function getCabins() {
   const { data: cabins, error } = await supabase.from("cabins").select("*");
 
   if (error) {
-    console.log(error);
     throw new Error(`Failed to fetch cabins: ${error}`);
   }
   return cabins;
@@ -19,7 +18,6 @@ export async function deleteCabin(id) {
 }
 
 export async function addEditCabin(newCabin, id) {
-  console.log(newCabin, id);
   //https://inaqybyfmfgixgowrqnp.supabase.co/storage/v1/object/public/cabin_images/cabin-001.jpg
   //create cabin
   const hasCabinPath = newCabin.image?.startsWith?.(supabaseUrl);

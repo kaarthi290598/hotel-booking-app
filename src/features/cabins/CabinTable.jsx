@@ -10,8 +10,6 @@ function CabinTable() {
 
   const [searchParams] = useSearchParams();
 
-  // console.log(searchParams.get("discount"));
-
   if (isLoading) return <Spinner />;
   //filter
   const filterParams = searchParams.get("discount") || "all";

@@ -6,15 +6,11 @@ export async function getSettings() {
 
   const { data: user, error: usererror } = await supabase.auth.getUser();
 
-  console.log(user.user.id);
-
   let { data, error } = await supabase
     .from("settings")
     .select("*")
     .eq("user_id", user.user.id)
     .single();
-
-  console.log(data);
 
   if (data === null) {
     const { data: settingsData, error: settingsError } = await supabase
@@ -29,7 +25,6 @@ export async function getSettings() {
         },
       ])
       .select();
-    console.log("loaded");
   }
 
   if (error) {
